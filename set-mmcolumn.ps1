@@ -93,8 +93,10 @@ function set-mmcolumn{
 		Break Change-SPOWebs
 	}
     
-    update-site -web $url -action $Action -SPOCredentials $SPOCredentials -title $ColumnTItle
+    update-site -web $siteUrl -action $Action -SPOCredentials $SPOCredentials -title $ColumnTItle
 
     #stop transcript
     stop-transcript
 }
+
+UhH13AJa7Jq
