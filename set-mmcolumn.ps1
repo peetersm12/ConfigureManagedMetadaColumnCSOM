@@ -71,7 +71,6 @@ function set-mmcolumn{
     $siteUrl = Read-Host "Please enter the SharePoint site URL"
     $loglocation = Read-Host "Enter log location for the PowerShell Transcript"
     $ColumnTitle = Read-Host "Enter the title of the column"
-    $CSVfile = Read-Host "Please enter the full CSV path location"
 
     #start transcript
     $date = (get-date).tostring('sshhMMddyyyy')
@@ -93,9 +92,6 @@ function set-mmcolumn{
 		write-host "Error: $($_.Exception.Message)" -foregroundcolor red
 		Break Change-SPOWebs
 	}
-		
-	#Loop through all urls in the csv
-    $urlArray = import-csv $CSVfile
     
     update-site -web $url -action $Action -SPOCredentials $SPOCredentials -title $ColumnTItle
 
